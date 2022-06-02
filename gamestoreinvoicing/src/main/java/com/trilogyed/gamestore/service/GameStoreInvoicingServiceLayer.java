@@ -14,7 +14,7 @@ import com.trilogyed.gamestore.model.*;
 import com.trilogyed.gamestore.viewModel.InvoiceViewModel;
 
 @Component
-public class GameStoreServiceLayer {
+public class GameStoreInvoicingServiceLayer {
 
     private final BigDecimal PROCESSING_FEE = new BigDecimal("15.49");
     private final BigDecimal MAX_INVOICE_TOTAL = new BigDecimal("999.99");
@@ -22,19 +22,15 @@ public class GameStoreServiceLayer {
     private final String CONSOLE_ITEM_TYPE = "Console";
     private final String TSHIRT_ITEM_TYPE = "T-Shirt";
 
-    GameRepository gameRepo;
-    ConsoleRepository consoleRepo;
-    TShirtRepository tShirtRepo;
+
     InvoiceRepository invoiceRepo;
     TaxRepository taxRepo;
     ProcessingFeeRepository processingFeeRepo;
 
     @Autowired
-    public GameStoreServiceLayer(GameRepository gameRepo, ConsoleRepository consoleRepo, TShirtRepository tShirtRepo,
-                                 InvoiceRepository invoiceRepo, TaxRepository taxRepo, ProcessingFeeRepository processingFeeRepo) {
-        this.gameRepo = gameRepo;
-        this.consoleRepo = consoleRepo;
-        this.tShirtRepo = tShirtRepo;
+    public GameStoreInvoicingServiceLayer(GameRepository gameRepo, ConsoleRepository consoleRepo, TShirtRepository tShirtRepo,
+                                          InvoiceRepository invoiceRepo, TaxRepository taxRepo, ProcessingFeeRepository processingFeeRepo) {
+
         this.invoiceRepo = invoiceRepo;
         this.taxRepo = taxRepo;
         this.processingFeeRepo = processingFeeRepo;

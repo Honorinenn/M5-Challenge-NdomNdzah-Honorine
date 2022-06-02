@@ -1,6 +1,7 @@
 package com.trilogyed.gamestorecatalog.repository;
 
 import com.trilogyed.gamestorecatalog.model.Game;
+import com.trilogyed.gamestorecatalog.model.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
