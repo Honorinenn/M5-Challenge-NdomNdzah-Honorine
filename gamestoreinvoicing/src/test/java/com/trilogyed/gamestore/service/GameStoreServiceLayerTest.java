@@ -25,7 +25,7 @@ public class GameStoreServiceLayerTest {
     InvoiceRepository invoiceRepository;
     ProcessingFeeRepository processingFeeRepository;
     TaxRepository taxRepository;
-    GameStoreServiceLayer service;
+    GameStoreInvoicingServiceLayer service;
 
     @Before
     public void setUp() throws Exception {
@@ -36,7 +36,7 @@ public class GameStoreServiceLayerTest {
         setUpProcessingFeeRepositoryMock();
         setUpTaxRepositoryMock();
 
-        service = new GameStoreServiceLayer(
+        service = new GameStoreInvoicingServiceLayer(
                 gameRepository, consoleRepository, tShirtRepository, invoiceRepository,
                 taxRepository, processingFeeRepository);
     }

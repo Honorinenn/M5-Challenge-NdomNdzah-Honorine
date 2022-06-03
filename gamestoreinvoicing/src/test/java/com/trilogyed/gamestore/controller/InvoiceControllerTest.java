@@ -1,6 +1,6 @@
 package com.trilogyed.gamestore.controller;
 
-import com.trilogyed.gamestore.service.GameStoreServiceLayer;
+import com.trilogyed.gamestore.service.GameStoreInvoicingServiceLayer;
 import com.trilogyed.gamestore.viewModel.InvoiceViewModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class InvoiceControllerTest {
     // The aim of this unit test is to test the controller and NOT the service layer.
     // Therefore mock the service layer.
     @MockBean
-    private GameStoreServiceLayer storeServiceLayer;
+    private GameStoreInvoicingServiceLayer storeServiceLayer;
 
     @Autowired
     //used to move between Objects and JSON
