@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GameStoreApplication {
+@EnableDiscoveryClient
+public class GameStoreInvoicingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GameStoreApplication.class, args);
+		SpringApplication.run(GameStoreInvoicingApplication.class, args);
 	}
 
 }
