@@ -3,6 +3,7 @@ package com.trilogyed.gamestore.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.Console;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -31,8 +32,8 @@ public class GameStoreInvoicingServiceLayer {
     public GameStoreInvoicingServiceLayer(InvoiceRepository invoiceRepo, TaxRepository taxRepo, ProcessingFeeRepository processingFeeRepo) {
 
         this.invoiceRepo = invoiceRepo;
-        this.taxRepo = taxRepo;
-        this.processingFeeRepo = processingFeeRepo;
+//        this.taxRepo = taxRepo;
+//        this.processingFeeRepo = processingFeeRepo;
     }
 
     public InvoiceViewModel createInvoice(InvoiceViewModel invoiceViewModel) {

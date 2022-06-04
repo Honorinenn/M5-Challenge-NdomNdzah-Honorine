@@ -3,6 +3,7 @@ package com.trilogyed.gamestore.controller;
 import com.trilogyed.gamestore.service.GameStoreInvoicingServiceLayer;
 import com.trilogyed.gamestore.viewModel.InvoiceViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

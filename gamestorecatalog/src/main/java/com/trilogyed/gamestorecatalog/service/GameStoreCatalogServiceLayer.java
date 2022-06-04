@@ -1,5 +1,8 @@
 package com.trilogyed.gamestorecatalog.service;
 
+import com.trilogyed.gamestorecatalog.viewModel.ConsoleViewModel;
+import com.trilogyed.gamestorecatalog.viewModel.GameViewModel;
+import com.trilogyed.gamestorecatalog.viewModel.TShirtViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,9 +12,9 @@ import java.util.Optional;
 
 import com.trilogyed.gamestorecatalog.repository.*;
 import com.trilogyed.gamestorecatalog.model.*;
-import com.trilogyed.gamestorecatalog.viewModel.ConsoleViewModel;
-import com.trilogyed.gamestorecatalog.viewModel.GameViewModel;
-import com.trilogyed.gamestorecatalog.viewModel.TShirtViewModel;
+//import com.trilogyed.gamestorecatalog.viewModel.ConsoleViewModel;
+//import com.trilogyed.gamestorecatalog.viewModel.GameViewModel;
+//import com.trilogyed.gamestorecatalog.viewModel.TShirtViewModel;
 
 @Component
 public class GameStoreCatalogServiceLayer {
