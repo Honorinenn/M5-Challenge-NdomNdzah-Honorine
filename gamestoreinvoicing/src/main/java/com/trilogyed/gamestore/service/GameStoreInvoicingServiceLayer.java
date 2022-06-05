@@ -24,9 +24,9 @@ public class GameStoreInvoicingServiceLayer {
 
     private final BigDecimal PROCESSING_FEE = new BigDecimal("15.49");
     private final BigDecimal MAX_INVOICE_TOTAL = new BigDecimal("999.99");
-    private final String GAME_ITEM_TYPE = "Game";
-    private final String CONSOLE_ITEM_TYPE = "Console";
-    private final String TSHIRT_ITEM_TYPE = "T-Shirt";
+//    private final String GAME_ITEM_TYPE = "Game";
+//    private final String CONSOLE_ITEM_TYPE = "Console";
+//    private final String TSHIRT_ITEM_TYPE = "T-Shirt";
 
 
     InvoiceRepository invoiceRepo;
