@@ -1,6 +1,7 @@
 package com.trilogyed.gamestore.controller;
 
 import com.trilogyed.gamestore.service.GameStoreInvoicingServiceLayer;
+import com.trilogyed.gamestore.util.feign.InvoiceClient;
 import com.trilogyed.gamestore.viewModel.InvoiceViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -15,6 +16,43 @@ import java.util.List;
 @RequestMapping(value = "/invoice")
 @CrossOrigin(origins = {"http://localhost:3000"})
 public class InvoiceController {
+
+    @Autowired
+    private final InvoiceClient client;
+
+    public InvoiceController(InvoiceClient client) {this.client = client;}
+
+    @RequestMapping(value="/games/{id}", method=RequestMethod.GET)
+    public String GameStoreGame(){
+        return client.invoiceViewModelGame();
+    }
+
+    @RequestMapping(value="/consoles/{id}", method=RequestMethod.GET)
+    public String GameStoreConsole(){
+        return client.invoiceViewModelConsole();
+    }
+
+    @RequestMapping(value="/t-shirts/{id}", method=RequestMethod.GET)
+    public String GameStoreTShirt(){
+        return client.invoiceViewModelTShirt();
+    }
+
+    @RequestMapping(value="/games/{id}", method=RequestMethod.PUT)
+    public String GameStoreGameP(){
+        return client.invoiceViewModelGame();
+    }
+    @RequestMapping(value="/games/{id}", method=RequestMethod.PUT)
+    public String GameStoreConsoleP(){
+        return client.invoiceViewModelGame();
+    }
+
+    @RequestMapping(value="/t-shirts/{id}", method=RequestMethod.PUT)
+    public String GameStoreTShirtP(){
+        return client.invoiceViewModelTShirt();
+    }
+
+
+
 
     @Autowired
     GameStoreInvoicingServiceLayer service;

@@ -1,11 +1,22 @@
 package com.trilogyed.gamestore.util.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @FeignClient(name = "gamestorecatalog")
 
 public interface InvoiceClient {
+
+    @RequestMapping(value= "/games/{id}", method = RequestMethod.GET)
+    public String invoiceViewModelGame();
+
+    @RequestMapping(value= "/consoles/{id}", method = RequestMethod.GET)
+    public String invoiceViewModelConsole();
+
+    @RequestMapping(value= "/t-shirts/{id}", method = RequestMethod.GET)
+    public String invoiceViewModelTShirt();
 
 }
