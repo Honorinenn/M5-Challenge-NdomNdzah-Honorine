@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-applocation.properties
+application.properties
