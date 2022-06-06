@@ -20,12 +20,12 @@ public interface InvoiceClient {
     public String invoiceViewModelTShirt();
 
     @RequestMapping(value= "/games/{id}", method = RequestMethod.PUT)
-    public void invoiceViewModelGameP();
+    public String invoiceViewModelGameP();
 
     @RequestMapping(value= "/consoles/{id}", method = RequestMethod.PUT)
-    public void invoiceViewModelConsoleP();
+    public String invoiceViewModelConsoleP();
 
     @RequestMapping(value= "/t-shirts/{id}", method = RequestMethod.PUT)
-    public void invoiceViewModelTShirtP();
+    public String invoiceViewModelTShirtP();
 
 }

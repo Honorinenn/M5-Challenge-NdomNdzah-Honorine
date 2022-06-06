@@ -38,17 +38,17 @@ public class InvoiceController {
     }
 
     @RequestMapping(value="/games/{id}", method=RequestMethod.PUT)
-    public void GameStoreGameP(){
-        client.invoiceViewModelGameP();
+    public String GameStoreGameP(){
+        return client.invoiceViewModelGameP();
     }
     @RequestMapping(value="/consoles/{id}", method=RequestMethod.PUT)
-    public void GameStoreConsoleP() {
-        client.invoiceViewModelConsoleP();
+    public String GameStoreConsoleP() {
+        return client.invoiceViewModelConsoleP();
     }
 
         @RequestMapping(value = "/t-shirts/{id}", method = RequestMethod.PUT)
-        public void GameStoreTShirtP() {
-            client.invoiceViewModelTShirtP();
+        public String GameStoreTShirtP() {
+            return client.invoiceViewModelTShirtP();
         }
     }
 
