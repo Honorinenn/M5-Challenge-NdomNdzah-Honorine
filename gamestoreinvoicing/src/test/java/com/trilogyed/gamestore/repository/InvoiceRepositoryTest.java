@@ -21,12 +21,12 @@ public class InvoiceRepositoryTest {
 
     @Autowired
     InvoiceRepository invoiceRepository;
-    @Autowired
-    TShirtRepository tShirtRepository;
-    @Autowired
-    GameRepository gameRepository;
-    @Autowired
-    ConsoleRepository consoleRepository;
+//    @Autowired
+//    TShirtRepository tShirtRepository;
+//    @Autowired
+//    GameRepository gameRepository;
+//    @Autowired
+//    ConsoleRepository consoleRepository;
     @Autowired
     TaxRepository taxRepository;
     @Autowired
@@ -34,9 +34,9 @@ public class InvoiceRepositoryTest {
 
     @Before
     public void setUp() throws Exception {
-        consoleRepository.deleteAll();
-        gameRepository.deleteAll();
-        tShirtRepository.deleteAll();
+//        consoleRepository.deleteAll();
+//        gameRepository.deleteAll();
+//        tShirtRepository.deleteAll();
         invoiceRepository.deleteAll();
         processingFeeRepository.deleteAll();
 
@@ -61,18 +61,18 @@ public class InvoiceRepositoryTest {
     public void shouldAddFindDeleteInvoice() {
 
         //Arrange
-        TShirt tShirt1 = new TShirt();
-        tShirt1.setSize("M");
-        tShirt1.setColor("Blue");
-        tShirt1.setDescription("v-neck short sleeve");
+//        TShirt tShirt1 = new TShirt();
+//        tShirt1.setSize("M");
+//        tShirt1.setColor("Blue");
+//        tShirt1.setDescription("v-neck short sleeve");
 
         //The double quotes forces the decimal point.
         // an alternative to set BigDecimal is using:
         // tShirt1.setPrice(new BigDecimal("15.99").setScale(2, RoundingMode.HALF_UP));
-        tShirt1.setPrice(new BigDecimal("15.99"));
-
-        tShirt1.setQuantity(8);
-        tShirt1 = tShirtRepository.save(tShirt1);
+//        tShirt1.setPrice(new BigDecimal("15.99"));
+//
+//        tShirt1.setQuantity(8);
+//        tShirt1 = tShirtRepository.save(tShirt1);
 
         Invoice invoice1 = new Invoice();
         invoice1.setName("Joe Black");
@@ -81,14 +81,14 @@ public class InvoiceRepositoryTest {
         invoice1.setState("NY");
         invoice1.setZipcode("10016");
         invoice1.setItemType("T-Shirts");
-        invoice1.setItemId(tShirt1.getId());
-        invoice1.setUnitPrice(tShirt1.getPrice());
+//        invoice1.setItemId(tShirt1.getId());
+//        invoice1.setUnitPrice(tShirt1.getPrice());
         invoice1.setQuantity(2);
 
-        invoice1.setSubtotal(
-                tShirt1.getPrice().multiply(
-                        new BigDecimal(invoice1.getQuantity()))
-        );
+//        invoice1.setSubtotal(
+//                tShirt1.getPrice().multiply(
+//                        new BigDecimal(invoice1.getQuantity()))
+//        );
 
         Optional<Tax> tax = taxRepository.findById(invoice1.getState());
         assertTrue(tax.isPresent());
@@ -120,18 +120,18 @@ public class InvoiceRepositoryTest {
     public void shouldFindByName() {
 
         //Arrange
-        TShirt tShirt1 = new TShirt();
-        tShirt1.setSize("M");
-        tShirt1.setColor("Blue");
-        tShirt1.setDescription("v-neck short sleeve");
+//        TShirt tShirt1 = new TShirt();
+//        tShirt1.setSize("M");
+//        tShirt1.setColor("Blue");
+//        tShirt1.setDescription("v-neck short sleeve");
 
         //The double quotes forces the decimal point.
         //an alternative to set BigDecimal is using:
         //tShirt1.setPrice(new BigDecimal("15.99").setScale(2, RoundingMode.HALF_UP));
-        tShirt1.setPrice(new BigDecimal("15.99"));
-
-        tShirt1.setQuantity(8);
-        tShirt1 = tShirtRepository.save(tShirt1);
+//        tShirt1.setPrice(new BigDecimal("15.99"));
+//
+//        tShirt1.setQuantity(8);
+//        tShirt1 = tShirtRepository.save(tShirt1);
 
         Invoice invoice1 = new Invoice();
         invoice1.setName("Joe Black");
@@ -140,11 +140,11 @@ public class InvoiceRepositoryTest {
         invoice1.setState("NY");
         invoice1.setZipcode("10016");
         invoice1.setItemType("T-Shirts");
-        invoice1.setItemId(tShirt1.getId());
-        invoice1.setUnitPrice(tShirt1.getPrice());
-        invoice1.setQuantity(2);
-
-        invoice1.setSubtotal(tShirt1.getPrice().multiply(new BigDecimal(invoice1.getQuantity())));
+//        invoice1.setItemId(tShirt1.getId());
+//        invoice1.setUnitPrice(tShirt1.getPrice());
+//        invoice1.setQuantity(2);
+//
+//        invoice1.setSubtotal(tShirt1.getPrice().multiply(new BigDecimal(invoice1.getQuantity())));
 
         Optional<Tax> tax = taxRepository.findById(invoice1.getState());
         assertTrue(tax.isPresent());

@@ -41,65 +41,65 @@ public class InvoiceController {
     public void GameStoreGameP(){
         client.invoiceViewModelGameP();
     }
-    @RequestMapping(value="/games/{id}", method=RequestMethod.PUT)
-    public void GameStoreConsoleP(){
+    @RequestMapping(value="/consoles/{id}", method=RequestMethod.PUT)
+    public void GameStoreConsoleP() {
         client.invoiceViewModelConsoleP();
     }
 
-    @RequestMapping(value="/t-shirts/{id}", method=RequestMethod.PUT)
-    public void GameStoreTShirtP(){
-        client.invoiceViewModelTShirtP();
+        @RequestMapping(value = "/t-shirts/{id}", method = RequestMethod.PUT)
+        public void GameStoreTShirtP() {
+            client.invoiceViewModelTShirtP();
+        }
     }
 
 
 
-
-    @Autowired
-    GameStoreInvoicingServiceLayer service;
+//    @Autowired
+//    GameStoreInvoicingServiceLayer service;
 
     // Assumption: All orders are final and data privacy is not top priority. Therefore, the Update & Delete EndPoints
     // are left out by design due to its potential danger. The getAllInvoices is a questionable one since it could
     // overwhelm the system and infringes on data privacy; however, it does not damage data as with the Update and Delete
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public InvoiceViewModel purchaseItem(@RequestBody @Valid InvoiceViewModel invoiceViewModel) {
-        invoiceViewModel = service.createInvoice(invoiceViewModel);
-        return invoiceViewModel;
-    }
-
-    @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public InvoiceViewModel findInvoice(@PathVariable("id") long invoiceId) {
-        InvoiceViewModel invoiceViewModel = service.getInvoice(invoiceId);
-        if (invoiceViewModel == null) {
-            throw new IllegalArgumentException("Invoice could not be retrieved for id " + invoiceId);
-        } else {
-            return invoiceViewModel;
-        }
-    }
-
-    @GetMapping()
-    @ResponseStatus(HttpStatus.OK)
-    public List<InvoiceViewModel> findAllInvoices() {
-        List<InvoiceViewModel> invoiceViewModelList = service.getAllInvoices();
-
-        if (invoiceViewModelList == null || invoiceViewModelList.isEmpty()) {
-            throw new IllegalArgumentException("No invoices were found.");
-        } else {
-            return invoiceViewModelList;
-        }
-    }
-
-    @GetMapping("/cname/{name}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<InvoiceViewModel> findInvoicesByCustomerName(@PathVariable String name) {
-        List<InvoiceViewModel> invoiceViewModelList = service.getInvoicesByCustomerName(name);
-
-        if (invoiceViewModelList == null || invoiceViewModelList.isEmpty()) {
-            throw new IllegalArgumentException("No invoices were found for: "+name);
-        } else {
-            return invoiceViewModelList;
-        }
-    }
-}
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public InvoiceViewModel purchaseItem(@RequestBody @Valid InvoiceViewModel invoiceViewModel) {
+//        invoiceViewModel = service.createInvoice(invoiceViewModel);
+//        return invoiceViewModel;
+//    }
+//
+//    @GetMapping("/{id}")
+//    @ResponseStatus(HttpStatus.OK)
+//    public InvoiceViewModel findInvoice(@PathVariable("id") long invoiceId) {
+//        InvoiceViewModel invoiceViewModel = service.getInvoice(invoiceId);
+//        if (invoiceViewModel == null) {
+//            throw new IllegalArgumentException("Invoice could not be retrieved for id " + invoiceId);
+//        } else {
+//            return invoiceViewModel;
+//        }
+//    }
+//
+//    @GetMapping()
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<InvoiceViewModel> findAllInvoices() {
+//        List<InvoiceViewModel> invoiceViewModelList = service.getAllInvoices();
+//
+//        if (invoiceViewModelList == null || invoiceViewModelList.isEmpty()) {
+//            throw new IllegalArgumentException("No invoices were found.");
+//        } else {
+//            return invoiceViewModelList;
+//        }
+//    }
+//
+//    @GetMapping("/cname/{name}")
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<InvoiceViewModel> findInvoicesByCustomerName(@PathVariable String name) {
+//        List<InvoiceViewModel> invoiceViewModelList = service.getInvoicesByCustomerName(name);
+//
+//        if (invoiceViewModelList == null || invoiceViewModelList.isEmpty()) {
+//            throw new IllegalArgumentException("No invoices were found for: "+name);
+//        } else {
+//            return invoiceViewModelList;
+//        }
+//    }
+//}
